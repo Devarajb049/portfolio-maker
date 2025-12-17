@@ -122,7 +122,7 @@ export const renderModern = (data) => {
 
             <div class="max-w-xl mx-auto bg-slate-800/50 p-8 rounded-2xl border border-slate-700/50">
                 <form action="mailto:${social.email}" method="POST" enctype="text/plain" class="space-y-6">
-                    <div class="grid grid-cols-2 gap-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                          <div class="space-y-2">
                             <label class="text-sm text-slate-400 font-mono">Name</label>
                             <input type="text" name="name" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-slate-200 focus:border-accent focus:ring-1 focus:ring-accent outline-none transition">

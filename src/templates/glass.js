@@ -150,7 +150,7 @@ export const renderGlass = (data) => {
                 </div>
 
                 <form action="mailto:${social.email}" method="POST" enctype="text/plain" class="space-y-5">
-                    <div class="grid grid-cols-2 gap-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div class="space-y-2">
                              <label class="text-sm font-semibold text-gray-600 ml-1">Name</label>
                              <input type="text" name="name" required class="w-full px-4 py-3 rounded-xl bg-white/50 border border-white/60 focus:bg-white/80 focus:ring-2 focus:ring-accent/20 outline-none transition shadow-sm" placeholder="Name">

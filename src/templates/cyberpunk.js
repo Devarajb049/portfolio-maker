@@ -167,7 +167,7 @@ export const renderCyberpunk = (data) => {
 
         <!-- Contact -->
         <footer class="border-t border-gray-800 pt-16">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div>
                    <h2 class="text-4xl font-display font-bold text-white uppercase tracking-tighter mb-6">Initialize_Comms</h2>
                    <p class="text-gray-400 mb-8 max-w-sm">Ready to jack in? Send a secured transmission.</p>

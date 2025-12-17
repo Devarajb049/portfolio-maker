@@ -45,13 +45,30 @@ export const renderCreative = (data) => {
         
         <!-- Header / Hero Box -->
         <div id="home" class="md:col-span-8 bg-black text-white p-8 md:p-12 rounded-3xl flex flex-col justify-between min-h-[400px]">
-            <nav class="flex justify-between items-center mb-12 flex-wrap gap-4">
+            <nav class="flex justify-between items-center mb-12 relative">
                 <span class="text-xl font-bold tracking-tighter">${personal.name} Portfolio</span>
-                <div class="flex items-center gap-6 text-sm font-medium text-gray-400">
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-400">
                     <a href="#home" class="hover:text-white transition">HOME</a>
                     <a href="#projects" class="hover:text-white transition">WORK</a>
                     <a href="#experience" class="hover:text-white transition">EXPERIENCE</a>
                     <a href="#contact" class="hover:text-white transition">CONTACT</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="creative-menu-btn" class="md:hidden text-white z-50 p-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </button>
+
+                <!-- Mobile Menu Overlay -->
+                <div id="creative-mobile-menu" class="hidden fixed inset-0 bg-black/95 z-40 flex flex-col items-center justify-center gap-8 text-2xl font-bold">
+                    <a href="#home" class="hover:text-accent transition mobile-link">HOME</a>
+                    <a href="#projects" class="hover:text-accent transition mobile-link">WORK</a>
+                    <a href="#experience" class="hover:text-accent transition mobile-link">EXPERIENCE</a>
+                    <a href="#contact" class="hover:text-accent transition mobile-link">CONTACT</a>
                 </div>
             </nav>
             <div>
@@ -101,7 +118,7 @@ export const renderCreative = (data) => {
         <!-- Experience Box -->
         <div id="experience" class="md:col-span-12 bg-[#e5e5e5] p-8 md:p-12 rounded-3xl mt-4">
             <h2 class="text-4xl font-bold mb-12 uppercase tracking-tighter">Experience</h2>
-            <div class="grid md:grid-cols-2 gap-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
                 ${experience.map(exp => `
                     <div class="border-t border-gray-400 pt-6">
                         <span class="block text-sm font-bold text-gray-500 mb-2">${exp.period}</span>
@@ -115,7 +132,7 @@ export const renderCreative = (data) => {
         
         <!-- Contact Box -->
         <div id="contact" class="md:col-span-12 bg-black text-white p-8 md:p-12 rounded-3xl mt-4">
-             <div class="grid md:grid-cols-2 gap-12 items-center">
+             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                  <div>
                      <h2 class="text-4xl md:text-6xl font-bold mb-6 leading-none">LET'S BUILD<br>SOMETHING.</h2>
                      <p class="text-gray-400 mb-8 max-w-md">I'm currently looking for new opportunities. Send me an email and let's discuss how I can help you.</p>
@@ -127,7 +144,7 @@ export const renderCreative = (data) => {
                  </div>
                  
                  <form action="mailto:${social.email}" method="POST" enctype="text/plain" class="space-y-4 bg-white/5 p-6 rounded-2xl backdrop-blur-sm border border-white/10">
-                    <div class="grid grid-cols-2 gap-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <input type="text" name="name" placeholder="NAME" required 
                             class="w-full bg-transparent border-b border-gray-600 py-4 text-white placeholder-gray-500 focus:border-white outline-none transition uppercase font-bold text-sm">
                         <input type="email" name="email" placeholder="EMAIL" required 
@@ -148,6 +165,21 @@ export const renderCreative = (data) => {
         </div>
 
     </main>
+    <script>
+        const btn = document.getElementById('creative-menu-btn');
+        const menu = document.getElementById('creative-mobile-menu');
+        const links = document.querySelectorAll('.mobile-link');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
 </body>
 </html>`;
 };

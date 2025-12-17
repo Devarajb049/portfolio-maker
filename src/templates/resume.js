@@ -27,16 +27,16 @@ export const renderResume = (data) => {
 </head>
 <body class="bg-gray-200 min-h-screen p-0 md:p-8 font-serif">
 
-    <div class="max-w-[210mm] mx-auto bg-white shadow-2xl overflow-hidden min-h-[297mm]">
+    <div class="w-full md:max-w-[210mm] mx-auto bg-white shadow-2xl overflow-hidden min-h-[297mm]">
         <!-- Header -->
-        <header class="bg-slate-900 text-white p-12">
-            <h1 class="text-4xl font-bold uppercase tracking-widest mb-2">${personal.name}</h1>
-            <p class="text-lg text-gray-400 tracking-wide uppercase">${personal.role}</p>
+        <header class="bg-slate-900 text-white p-8 md:p-12">
+            <h1 class="text-3xl md:text-4xl font-bold uppercase tracking-widest mb-2">${personal.name}</h1>
+            <p class="text-base md:text-lg text-gray-400 tracking-wide uppercase">${personal.role}</p>
         </header>
 
-        <div class="grid grid-cols-3">
+        <div class="flex flex-col md:grid md:grid-cols-3">
             <!-- Sidebar -->
-            <aside class="col-span-1 bg-gray-50 p-8 border-r border-gray-100 min-h-screen">
+            <aside class="col-span-1 bg-gray-50 p-8 border-r border-gray-100 md:min-h-screen">
                 
                 <div class="mb-10">
                     <h2 class="text-sm font-bold uppercase tracking-widest text-gray-900 border-b-2 border-accent pb-2 mb-4">Contact</h2>

@@ -64,7 +64,7 @@ export const renderSwiss = (data) => {
                             <span class="w-4 h-4 bg-brand inline-block"></span> 
                             Competencies
                         </h2>
-                        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
                              ${skills.map(skill => 
                                 '<div class="border-l border-white/20 pl-4 flex items-center gap-2">' +
                                     '<span class="text-brand text-xl font-bold">»</span>' +
@@ -77,7 +77,7 @@ export const renderSwiss = (data) => {
 
                 <!-- Projects -->
                 <section>
-                    <div class="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-black/10">
+                    <div class="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-black/10">
                         ${projects.map((project, i) => 
                             '<article class="p-8 md:p-12 hover:bg-gray-50 transition-colors group h-full flex flex-col">' +
                                 '<div class="text-8xl font-black text-gray-100 mb-8 absolute pointer-events-none group-hover:text-brand/10 transition-colors">' +
@@ -108,7 +108,7 @@ export const renderSwiss = (data) => {
                     </h2>
                     <div class="space-y-12">
                          ${experience.map(exp => 
-                            '<div class="grid md:grid-cols-4 gap-4">' +
+                            '<div class="grid grid-cols-1 md:grid-cols-4 gap-4">' +
                                 '<div class="md:col-span-1 font-bold text-gray-400">' + exp.period + '</div>' +
                                 '<div class="md:col-span-3 border-l-2 border-black/10 pl-8">' +
                                     '<h3 class="text-xl font-bold">' + exp.role + '</h3>' +

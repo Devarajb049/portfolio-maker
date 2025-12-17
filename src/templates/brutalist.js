@@ -37,9 +37,9 @@ export const renderBrutalist = (data) => {
 
     <!-- Nav -->
     <nav class="bg-black text-white p-4 sticky top-0 z-50 border-b-4 border-black">
-        <div class="max-w-5xl mx-auto flex justify-between items-center">
-            <div class="font-bold text-xl uppercase tracking-widest hover:text-main cursor-pointer" onclick="window.scrollTo(0,0)">${personal.name}</div>
-            <div class="flex gap-6 font-bold uppercase text-sm md:text-base">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="font-bold text-xl uppercase tracking-widest hover:text-main cursor-pointer text-center md:text-left" onclick="window.scrollTo(0,0)">${personal.name}</div>
+            <div class="flex gap-4 md:gap-6 font-bold uppercase text-xs md:text-base flex-wrap justify-center">
                 <a href="#home" class="hover:text-main hover:underline decoration-2 underline-offset-4">Home</a>
                 <a href="#projects" class="hover:text-main hover:underline decoration-2 underline-offset-4">Work</a>
                 <a href="#skills" class="hover:text-main hover:underline decoration-2 underline-offset-4">Skills</a>
@@ -48,25 +48,25 @@ export const renderBrutalist = (data) => {
         </div>
     </nav>
 
-    <div class="max-w-5xl mx-auto p-6 md:p-12">
+    <div class="max-w-5xl mx-auto p-4 md:p-12">
         
         <!-- Header -->
-        <header id="home" class="bg-white border-4 border-black p-8 shadow-hard mb-16 relative mt-10">
-            <div class="absolute -top-6 -right-6 bg-main border-4 border-black px-4 py-2 text-white font-bold rotate-6 shadow-hard text-xl">
+        <header id="home" class="bg-white border-4 border-black p-6 md:p-8 shadow-hard mb-16 relative mt-6 md:mt-10">
+            <div class="hidden md:block absolute -top-6 -right-6 bg-main border-4 border-black px-4 py-2 text-white font-bold rotate-6 shadow-hard text-xl">
                 HIRE ME NOW
             </div>
             
-            <h1 class="text-6xl md:text-8xl uppercase leading-none mb-4">${personal.name}</h1>
-            <p class="text-2xl font-bold bg-black text-white inline-block px-4 py-2">${personal.role}</p>
-            <p class="mt-6 text-lg max-w-2xl font-bold">${personal.bio}</p>
+            <h1 class="text-4xl md:text-8xl uppercase leading-none mb-4 break-words">${personal.name}</h1>
+            <p class="text-lg md:text-2xl font-bold bg-black text-white inline-block px-4 py-2">${personal.role}</p>
+            <p class="mt-6 text-base md:text-lg max-w-2xl font-bold">${personal.bio}</p>
 
-            <div class="mt-8 flex gap-4">
-                 <a href="#contact" class="btn px-6 py-3 bg-white border-4 border-black hover:shadow-hard shadow-hard-hov transition-all hover:translate-x-1 hover:translate-y-1 cursor-pointer">EMAIL ME</a>
-                 ${social.github ? `<a href="${social.github}" target="_blank" class="btn px-6 py-3 bg-main text-white border-4 border-black hover:shadow-hard shadow-hard-hov transition-all hover:translate-x-1 hover:translate-y-1">GITHUB</a>` : ''}
+            <div class="mt-8 flex flex-col md:flex-row gap-4">
+                 <a href="#contact" class="btn px-6 py-3 bg-white border-4 border-black hover:shadow-hard shadow-hard-hov transition-all hover:translate-x-1 hover:translate-y-1 cursor-pointer text-center">EMAIL ME</a>
+                 ${social.github ? `<a href="${social.github}" target="_blank" class="btn px-6 py-3 bg-main text-white border-4 border-black hover:shadow-hard shadow-hard-hov transition-all hover:translate-x-1 hover:translate-y-1 text-center">GITHUB</a>` : ''}
             </div>
         </header>
 
-        <div class="grid md:grid-cols-2 gap-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
             
             <!-- Projects -->
             <section id="projects">
