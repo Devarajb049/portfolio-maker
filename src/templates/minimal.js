@@ -39,8 +39,10 @@ body {
 
 <!-- Navigation -->
 <nav class="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md border-b border-gray-100 z-50">
-    <div class="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
+    <div class="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between relative">
         <a href="#home" class="font-bold text-xl tracking-tight text-gray-900">${personal.name}</a>
+        
+        <!-- Desktop Menu -->
         <div class="hidden md:flex gap-8 text-sm font-medium text-gray-600">
             <a href="#home" class="hover:text-gray-900 transition">Home</a>
              <a href="#skills" class="hover:text-gray-900 transition">Skills</a>
@@ -48,11 +50,27 @@ body {
             <a href="#experience" class="hover:text-gray-900 transition">Experience</a>
             <a href="#contact" class="hover:text-gray-900 transition">Contact</a>
         </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="minimal-menu-btn" class="md:hidden text-gray-900 p-2">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+        </button>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="minimal-mobile-menu" class="hidden absolute top-16 left-0 w-full bg-white border-b border-gray-100 shadow-soft p-6 flex flex-col gap-4 text-center text-gray-600 font-medium md:hidden">
+            <a href="#home" class="hover:text-primary transition mobile-link">Home</a>
+            <a href="#skills" class="hover:text-primary transition mobile-link">Skills</a>
+            <a href="#projects" class="hover:text-primary transition mobile-link">Projects</a>
+            <a href="#experience" class="hover:text-primary transition mobile-link">Experience</a>
+            <a href="#contact" class="hover:text-primary transition mobile-link">Contact</a>
+        </div>
     </div>
 </nav>
 
 <!-- Hero -->
-<header id="home" class="max-w-4xl mx-auto px-6 pt-32 pb-20 text-center">
+<header id="home" class="max-w-4xl mx-auto px-6 pt-24 md:pt-32 pb-16 md:pb-20 text-center">
   <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 mb-6">
     ${personal.name}
   </h1>
@@ -184,17 +202,19 @@ body {
         </div>
 
         <form action="mailto:${social.email}" method="POST" enctype="text/plain" class="space-y-4">
-            <div>
-                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
-                <input type="text" name="name" id="name" required 
-                    class="w-full px-4 py-2 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition bg-white"
-                    placeholder="John Doe">
-            </div>
-            <div>
-                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                <input type="email" name="email" id="email" required 
-                    class="w-full px-4 py-2 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition bg-white"
-                    placeholder="john@example.com">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                    <input type="text" name="name" id="name" required 
+                        class="w-full px-4 py-2 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition bg-white"
+                        placeholder="John Doe">
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                    <input type="email" name="email" id="email" required 
+                        class="w-full px-4 py-2 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition bg-white"
+                        placeholder="john@example.com">
+                </div>
             </div>
             <div>
                 <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
@@ -214,8 +234,24 @@ body {
     ${social.linkedin ? `<a href="${social.linkedin}" class="mx-2 hover:text-gray-600">LinkedIn</a>` : ''}
     ${social.github ? `<a href="${social.github}" class="mx-2 hover:text-gray-600">GitHub</a>` : ''}
   </div>
-  © ${new Date().getFullYear()} ${personal.name}. All rights reserved.
+    © ${new Date().getFullYear()} ${personal.name}. All rights reserved.
 </footer>
+
+<script>
+    const minBtn = document.getElementById('minimal-menu-btn');
+    const minMenu = document.getElementById('minimal-mobile-menu');
+    const minLinks = document.querySelectorAll('#minimal-mobile-menu .mobile-link');
+
+    minBtn.addEventListener('click', () => {
+        minMenu.classList.toggle('hidden');
+    });
+
+    minLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            minMenu.classList.add('hidden');
+        });
+    });
+</script>
 
 </body>
 </html>`;

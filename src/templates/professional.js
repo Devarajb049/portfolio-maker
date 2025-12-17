@@ -144,13 +144,15 @@ export const renderProfessional = (data) => {
                  </div>
 
                  <form action="mailto:${social.email}" method="POST" enctype="text/plain" class="space-y-4">
-                     <div>
-                         <label class="block text-sm font-bold text-gray-700 mb-1">Name</label>
-                         <input type="text" name="name" required class="w-full bg-gray-50 border border-gray-300 rounded px-4 py-2 text-gray-800 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition">
-                     </div>
-                     <div>
-                         <label class="block text-sm font-bold text-gray-700 mb-1">Email</label>
-                         <input type="email" name="email" required class="w-full bg-gray-50 border border-gray-300 rounded px-4 py-2 text-gray-800 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition">
+                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                         <div>
+                             <label class="block text-sm font-bold text-gray-700 mb-1">Name</label>
+                             <input type="text" name="name" required class="w-full bg-gray-50 border border-gray-300 rounded px-4 py-2 text-gray-800 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition">
+                         </div>
+                         <div>
+                             <label class="block text-sm font-bold text-gray-700 mb-1">Email</label>
+                             <input type="email" name="email" required class="w-full bg-gray-50 border border-gray-300 rounded px-4 py-2 text-gray-800 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition">
+                         </div>
                      </div>
                      <div>
                          <label class="block text-sm font-bold text-gray-700 mb-1">Message</label>
