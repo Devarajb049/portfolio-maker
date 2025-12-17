@@ -37,7 +37,7 @@ export const renderSwiss = (data) => {
             <header class="md:col-span-1 p-8 md:p-12 md:sticky md:top-0 md:h-screen flex flex-col justify-between">
                 <div>
                     <h1 class="text-6xl md:text-8xl font-black tracking-tighter leading-none mb-6 -ml-1">
-                        ${personal.name.split(' ').map(n => '<div>' + n + '</div>').join('')}
+                        ${personal.name.split(' ').map(n => '<span class="block">' + n + '</span>').join('')}
                     </h1>
                     <p class="text-xl md:text-2xl font-bold leading-tight mb-8">
                         ${personal.role}

@@ -132,13 +132,15 @@ export const renderBrutalist = (data) => {
                 <form action="mailto:${social.email}" method="POST" enctype="text/plain" class="bg-white border-4 border-black p-8 shadow-hard relative">
                      <div class="absolute -top-4 -right-4 bg-black text-white px-2 py-1 font-bold rotate-2 text-sm">NO SPAM PLS</div>
                     <div class="space-y-6">
-                        <div>
-                            <label class="font-bold block mb-2 uppercase border-b-4 border-black inline-block">WHO ARE YOU?</label>
-                            <input type="text" name="name" required class="w-full bg-[#f0f0f0] border-4 border-black p-4 font-bold focus:shadow-hard-hov focus:bg-white outline-none transition-all placeholder-gray-400" placeholder="YOUR NAME">
-                        </div>
-                        <div>
-                            <label class="font-bold block mb-2 uppercase border-b-4 border-black inline-block">YOUR EMAIL?</label>
-                            <input type="email" name="email" required class="w-full bg-[#f0f0f0] border-4 border-black p-4 font-bold focus:shadow-hard-hov focus:bg-white outline-none transition-all placeholder-gray-400" placeholder="EMAIL ADDRESS">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="font-bold block mb-2 uppercase border-b-4 border-black inline-block">WHO ARE YOU?</label>
+                                <input type="text" name="name" required class="w-full bg-[#f0f0f0] border-4 border-black p-4 font-bold focus:shadow-hard-hov focus:bg-white outline-none transition-all placeholder-gray-400" placeholder="YOUR NAME">
+                            </div>
+                            <div>
+                                <label class="font-bold block mb-2 uppercase border-b-4 border-black inline-block">YOUR EMAIL?</label>
+                                <input type="email" name="email" required class="w-full bg-[#f0f0f0] border-4 border-black p-4 font-bold focus:shadow-hard-hov focus:bg-white outline-none transition-all placeholder-gray-400" placeholder="EMAIL ADDRESS">
+                            </div>
                         </div>
                         <div>
                             <label class="font-bold block mb-2 uppercase border-b-4 border-black inline-block">WHAT'S THE PLAN?</label>

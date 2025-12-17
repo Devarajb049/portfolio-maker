@@ -127,7 +127,7 @@ export const renderPremium = (data) => {
             </button>
         </div>
         <!-- Mobile Menu -->
-        <div class="md:hidden hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 absolute w-full"
+        <div class="md:hidden hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 absolute top-20 left-0 w-full shadow-xl z-40"
             id="mobile-menu">
             <div class="flex flex-col p-6 gap-4">
                 <a href="#home" class="block w-full text-slate-600 dark:text-slate-300 font-medium">Home</a>
@@ -160,6 +160,28 @@ export const renderPremium = (data) => {
                     ${social.github ? `<a href="${social.github}" class="hover:text-brand-600 dark:hover:text-brand-400 text-2xl transition-colors transform hover:scale-110"><i class="fa-brands fa-github"></i></a>` : ''}
                     ${social.linkedin ? `<a href="${social.linkedin}" class="hover:text-brand-600 dark:hover:text-brand-400 text-2xl transition-colors transform hover:scale-110"><i class="fa-brands fa-linkedin"></i></a>` : ''}
                     ${social.email ? `<a href="mailto:${social.email}" class="hover:text-brand-600 dark:hover:text-brand-400 text-2xl transition-colors transform hover:scale-110"><i class="fa-solid fa-envelope"></i></a>` : ''}
+                </div>
+            </div>
+
+            <!-- Hero Visual -->
+            <div class="hidden md:block md:w-5/12 relative z-10 animate-[float_6s_ease-in-out_infinite]">
+                <div class="absolute -top-20 -right-20 w-96 h-96 bg-brand-500/20 rounded-full blur-3xl"></div>
+                <div class="absolute -bottom-20 -left-20 w-72 h-72 bg-purple-500/20 rounded-full blur-3xl"></div>
+                
+                <div class="bg-white/5 backdrop-blur-xl border border-white/10 p-6 rounded-2xl shadow-2xl transform rotate-3 hover:rotate-0 transition duration-500">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    </div>
+                    <div class="space-y-2 font-mono text-sm">
+                        <div class="text-pink-400">const <span class="text-blue-400">developer</span> = {</div>
+                        <div class="pl-4 text-slate-300">name: <span class="text-green-400">'${personal.name}'</span>,</div>
+                        <div class="pl-4 text-slate-300">role: <span class="text-green-400">'${personal.role}'</span>,</div>
+                        <div class="pl-4 text-slate-300">skills: [<span class="text-yellow-300">'Code'</span>, <span class="text-yellow-300">'Design'</span>],</div>
+                        <div class="pl-4 text-slate-300">hardWorker: <span class="text-purple-400">true</span></div>
+                        <div class="text-blue-400">};</div>
+                    </div>
                 </div>
             </div>
 
@@ -263,13 +285,15 @@ export const renderPremium = (data) => {
                      
                      <form action="mailto:${social.email}" method="POST" enctype="text/plain" class="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20">
                         <div class="space-y-5">
-                            <div>
-                                <label class="block text-sm font-medium text-blue-100 mb-2">Your Name</label>
-                                <input type="text" name="name" required class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-blue-200/50 focus:outline-none focus:bg-white/20 focus:border-white/40 transition" placeholder="John Doe">
-                            </div>
-                             <div>
-                                <label class="block text-sm font-medium text-blue-100 mb-2">Email Address</label>
-                                <input type="email" name="email" required class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-blue-200/50 focus:outline-none focus:bg-white/20 focus:border-white/40 transition" placeholder="john@example.com">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-sm font-medium text-blue-100 mb-2">Your Name</label>
+                                    <input type="text" name="name" required class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-blue-200/50 focus:outline-none focus:bg-white/20 focus:border-white/40 transition" placeholder="John Doe">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-blue-100 mb-2">Email Address</label>
+                                    <input type="email" name="email" required class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-blue-200/50 focus:outline-none focus:bg-white/20 focus:border-white/40 transition" placeholder="john@example.com">
+                                </div>
                             </div>
                              <div>
                                 <label class="block text-sm font-medium text-blue-100 mb-2">Message</label>
@@ -321,8 +345,16 @@ export const renderPremium = (data) => {
         // Mobile Menu
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+
         mobileMenuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
         });
 
         // ECharts

@@ -1,5 +1,5 @@
 import React from 'react';
-import { FileCode2, Layout, User, BookOpen, Briefcase, Share2, Download, Moon } from 'lucide-react';
+import { FileCode2, Layout, User, BookOpen, Briefcase, Share2, Download, Moon, PenTool } from 'lucide-react';
 import clsx from 'clsx';
 import { usePortfolio } from '../../context/PortfolioContext';
 
@@ -126,7 +126,7 @@ export const Sidebar = ({ activeTab, setActiveTab, isOpen, onClose }) => {
                 <div className="p-6 border-b border-slate-800 flex items-center justify-between">
                     <h1 className="text-xl font-bold text-white flex items-center gap-3 tracking-tight">
                         <div className="p-2 bg-blue-600 rounded-lg shadow-lg shadow-blue-900/50">
-                            <FileCode2 size={20} className="text-white" />
+                            <PenTool size={20} className="text-white" />
                         </div>
                         <span className="lg:inline">Portfolio-Maker</span>
                     </h1>

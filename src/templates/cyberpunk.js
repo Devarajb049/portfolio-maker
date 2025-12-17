@@ -97,7 +97,7 @@ export const renderCyberpunk = (data) => {
                 System..Online_
             </div>
             
-            <h1 class="text-4xl md:text-8xl font-black font-display text-white mb-6 uppercase leading-none tracking-tight glitch-text" data-text="${personal.name}">
+            <h1 class="text-3xl sm:text-4xl md:text-8xl font-black font-display text-white mb-6 uppercase leading-none tracking-tight glitch-text break-words" data-text="${personal.name}">
                 ${personal.name}
             </h1>
             <p class="text-xl md:text-2xl text-neon font-body tracking-wider mb-8 max-w-2xl border-l-4 border-neon pl-6">
@@ -116,7 +116,7 @@ export const renderCyberpunk = (data) => {
         <!-- Stats / Skills Grid -->
         <section class="mb-32">
             <div class="flex items-center gap-4 mb-12">
-                <h2 class="text-3xl font-bold font-display text-white uppercase tracking-widest">Skills_Database</h2>
+                <h2 class="text-2xl md:text-3xl font-bold font-display text-white uppercase tracking-widest">Skills_Database</h2>
                 <div class="h-px bg-gray-800 flex-1 relative overflow-hidden">
                     <div class="absolute top-0 left-0 h-full w-20 bg-neon animate-[marquee_2s_linear_infinite]"></div>
                 </div>
@@ -141,7 +141,7 @@ export const renderCyberpunk = (data) => {
         <!-- Projects -->
         <section class="mb-32">
             <div class="flex items-center gap-4 mb-12">
-                <h2 class="text-3xl font-bold font-display text-white uppercase tracking-widest">Project_Logs</h2>
+                <h2 class="text-2xl md:text-3xl font-bold font-display text-white uppercase tracking-widest">Project_Logs</h2>
                 <div class="h-px bg-gray-800 flex-1"></div>
             </div>
 
@@ -169,7 +169,7 @@ export const renderCyberpunk = (data) => {
         <footer class="border-t border-gray-800 pt-16">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div>
-                   <h2 class="text-4xl font-display font-bold text-white uppercase tracking-tighter mb-6">Initialize_Comms</h2>
+                   <h2 class="text-2xl md:text-4xl font-display font-bold text-white uppercase tracking-tighter mb-6 break-words">Initialize_Comms</h2>
                    <p class="text-gray-400 mb-8 max-w-sm">Ready to jack in? Send a secured transmission.</p>
                    
                     <div class="space-y-4 font-mono text-sm text-neon">
