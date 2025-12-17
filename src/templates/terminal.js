@@ -91,7 +91,7 @@ export const renderTerminal = (data) => {
                 <div class="mt-2 pl-4 space-y-4">
                     ${experience.map((exp, i) => `
                         <div>
-                            <div class="flex items-center gap-2">
+                            <div class="flex flex-wrap items-baseline gap-x-2 gap-y-1">
                                 <span class="text-gray-500">${i+1}</span>
                                 <span class="font-bold">${exp.role}</span>
                                 <span class="text-green-700">@</span>
